@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CNN</title>
+
+        <style> 
+    body{
+
+        margin: 0%;
+        padding: 0%;
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        font-family: CNN,Helvetica Neue,Helvetica,Arial,Utkal,sans-serif;
+        
+    }
+
+    a:hover ,h1:hover,h2:hover,h3:hover,h4:hover,p:hover,.detail-text:hover, div a:hover, li .a:hover, .first-col2 ul li a:hover{
+        color: red;
+    }
+    
+    .top-heading{
+        pointer-events: none;
+    }
+    ul{
+        padding: 5px;
+        margin-top: 0px;
+    }
+
+
+    .header-main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    }
+
+    .logo {
+    position: fixed;
+    width: 40px;
+    height: 20px;
+    padding-right: 15px;
+    }
+
+    .find {
+    width: 25px;
+    height: 20px;
+    filter: grayscale(100%) brightness(1000%);
+    margin-right: 15px;
+    }
+
+
+    .header-main{
+        position: fixed;
+        width: 100%; /* Hide horizontal scrollbar */
+        z-index: 1900;
+    }
+
+    .topnav {
+        position: relative;
+        background-color: #333;
+        overflow: hidden;
+        width: 100%;
+        display: block;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+
+    }
+
+    .topnav .second{
+        padding-left: 35px;
+    }
+
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    /* Centered section inside the top navigation */
+    .topnav-centered a {
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .topnav-centered{
+        visibility: hidden;
+    }
+
+    /* Right-aligned section inside the top navigation */
+    .topnav-right {
+        float: right;
+    }
+    .custom-color{
+            color: red;
+            display: inline-block;
+        }
+    .scroll-container {
+            width: 100%;
+            overflow-x: hidden;
+            white-space: nowrap;
+            justify-content: center;
+            display: block;
+    }
+    
+    .anchor-tag::-webkit-scrollbar {
+        display: none;
+        }
+    .anchor-tag a {
+            text-decoration: none;
+            color: black;
+            border-right: 2px solid gray;
+            margin-right: 10px;
+            padding-right: 13px;
+            display: inline-block;
+        }
+    
+    .anchor-tag {
+        margin-top: 5%;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+ 
+    .main-div{
+        text-align: center;
+        width: 80%;
+        height: 100%;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+    .first-main{
+        height: 50%;
+        width: 100%;
+        display: flex;
+
+    }
+
+    .first-col1{
+        width: 40%;
+        background-color: white;
+    }
+    .first-col2{
+        width: 25%;
+        margin-left:1%;
+    }
+    .first-col3{
+        width: 25%;
+        margin-left: 1%;
+    }
+    .horizontal{
+        color: gray;
+        text-decoration: dotted;
+        font-weight: 400px;
+        line-height: 1.2rem;
+    }
+    .sub-heading{
+        width: 100%;
+        text-align: justify;
+        font-size: 120%;
+        display: flex;
+    }
+    .first-col1  a{
+        display: flex;
+        text-align: justify;
+    }
+    .first-col2 li a{
+        text-decoration: underline;
+        text-decoration-color: gray;
+        color: black;
+        text-align: justify;
+    }
+    .first-col2 li{
+        list-style-position: inside;
+    }
+
+    .first-col3 .detail-text{
+        text-align: justify;
+    }
+    .first-col3  a{
+        display: flex;
+        text-align: justify;
+        color: black;
+        text-decoration: none;
+    }
+
+    .first-col3 .first-child{
+        display: inline;
+        text-align: justify;
+    }
+    .first-col1 .first-child{
+        display: inline-flex;
+        text-align: justify;
+        width: 120%;
+    }
+    .second-main{
+        max-width: 100%;
+        height: 50%;
+        display: flex;
+        position: relative;
+    }
+    .second-col1{
+        width: 25%;
+    }
+    .second-col2{
+        width: 46%;
+        margin-left: 2%;
+    }
+    .second-col3{
+        width: 25%;
+        margin-left: 2%;
+    }
+    .second-main h2{
+        margin: 0%;
+        text-align: left;
+    }
+    .second-main .top-heading{
+        background-color: #F2F2F2;
+    }
+    
+    .second-col1 .detail-text{
+        text-align: justify;
+    }
+    .second-col1 .detai{
+        text-align: justify;
+    }
+    .second-col1  a{
+        display: flex;
+        text-align: justify;
+        color: black;
+        text-decoration: none;
+    }
+
+    .second-col1 .first-child{
+        display: inline;
+        text-align: justify;
+    }
+    .img-text{
+        position: relative;
+    }
+    .img-text h3{
+        text-align: left;
+        margin: 0%;
+        position: absolute;
+        bottom: 0%;
+        background-color:  #ffffff;
+        opacity: 0.7;
+        padding: 0 3%;
+    }
+
+    .featured-imgText{
+        display: flex;
+    }
+    .featured-imgText h3{
+        display: inline;
+        text-align: justify;
+        margin: 0%;
+        margin-top: 1%;
+        padding-left: 2%;
+        font-family: Helvetica,Helvetica,Arial,sans-serif;
+        width: 50%;
+
+    }
+    .featured-imgText p{
+        display: inline;
+        text-align: justify;
+        margin: 0%;
+        margin-top: 1%;
+        padding-left: 2%;
+        font-family: Helvetica,Helvetica,Arial,sans-serif;
+        
+    }
+
+    .third-main{
+        margin-top: 5%;
+    }
+    .heading-section h2{
+        width: 20%;
+        margin: 0%;
+        display: inline;
+    }
+
+    .third-col{
+        display: flex;
+    }
+
+    .third-col .third-col2{
+        width: 35%;
+        margin-left: 2%;
+    }
+    .heading-section{
+        display: flex;
+    }
+    .heading-section .space{
+        display: inline-block;
+        height: 16px;
+    }
+
+    .heading-section .space::after{
+        width: 100%;
+        height: 1.5px;
+        content: "";
+        margin-left: 0.5rem;
+        position: absolute;
+        display: inline-block;
+        border-top: 4px  #d9d9d9 solid;
+        border-bottom: 4px #d9d9d9 solid;
+        max-width: 60%;
+    }
+
+    
+    .third-col .third-col1{
+        background-color: white;
+        width: 30%;
+        margin: 0%;
+        position: relative;
+    }
+
+    
+    .third-main .top-heading{
+        background-color: #F2F2F2;
+        text-align: left;
+        position: relative;
+        width: 100%;
+        display: flex;
+
+        margin-top: 3%;
+    }
+
+    .third-main .top-heading h2{
+        display: contents;
+    }
+
+
+    .third-main .top-heading::after{
+        content: url("images/next-48.png");
+        position: absolute;
+        display: flex;
+        margin-left: 92%;
+    }
+
+        
+    .third-main .detail-text{
+        text-align: justify;
+    }
+    .third-main .detai{
+        text-align: justify;
+    }
+    .third-main  a{
+        display: flex;
+        text-align: justify;
+        color: black;
+        text-decoration: none;
+    }
+    .forth-main{
+        width: 100%;
+    }
+    .forth-col{
+        width: 100%;
+        display: flex;
+    }
+    .forth-col .forth-col1{
+        width: 45%;
+    }
+    .forth-col .forth-img{
+        position: relative;
+    }
+    .forth-main .forth-text{
+        position: absolute;
+        background-color: #d9d9d9;
+        width: 80%;
+        margin: 0% 7%;
+        padding: 0% 3%;
+        top: 80%;
+        font-size: x-large;
+    }
+
+    .forth-col p{
+        margin: 0%;
+    }
+
+    .forth-col .forth-col2{
+        width: 45%;
+        margin-left: 10%;
+    }
+    
+    .second-forth-col{
+        width: 100%;
+        margin-top: 10%;
+    }
+    .fifth-main{
+        margin-top: 13%;
+    }
+
+
+    .fifth-main{
+        width: 100%;
+    }
+    .fifth-col{
+        text-align: justify;
+    }
+    .fifth-main .fifth-col{
+        margin-top: 1%;
+        width: 100%;
+        display: flex;
+    }
+    .fifth-main .fifth-col1{
+        width: 30%;
+    }
+    .fifth-main .fifth-col2{
+        width: 30%;
+        margin-left: 5%;
+    }
+    .fifth-main .fifth-col3{
+        width: 30%;
+        margin-left: 5%;
+    }
+
+    .sixth-main{
+        background-color: rgb(46, 39, 39);
+        width: 100%;
+    }
+    .sixth-main .six-col{
+        display: flex;
+        width: 100%;
+        margin-top: 1.5%;
+        justify-content: center;
+
+    }
+    .sixth-main .six-col1{
+        width: 60%;
+    }
+    .sixth-main .six-col2{
+        width: 27%;
+        margin-left: 2%;
+        color: #F2F2F2;
+    }
+    .six-col2 h3{
+        margin: 1% 0% 3%;
+        text-align: justify;
+    }
+    /*Sixth Heading Section*/
+    .sixth-main .heading-section{
+        display: flex;
+        color: #F2F2F2;
+        margin-left: 5.5%;
+    }
+    .sixth-main .heading-section .space{
+        display: inline-block;
+        height: 16px;
+    }
+
+    .sixth-main .heading-section .space::after{
+        width: 100%;
+        height: 1.5px;
+        content: "";
+        margin-left: 0.5rem;
+        position: absolute;
+        display: inline-block;
+        border-top: 4px  red solid;
+        border-bottom: 4px red solid;
+        max-width: 60%;
+    }
+
+    /*Img-Text of Sixth*/
+    .img-text{
+        position: relative;
+    }
+    .img-text h3{
+        text-align: left;
+        margin: 0%;
+        position: absolute;
+        bottom: 0%;
+        background-color:  black;
+        color: white;
+        font-size: xx-large;
+        opacity: 0.7;
+    }
+
+    .footer{
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+    .foot-col{
+        display: flex;
+        color: #ffffff;
+        justify-content: center;
+    }
+    .foot-col1{
+        width: 10%;
+    }
+    .foot-col2{
+        width: 10%;
+        margin-left: 1%;
+    }
+
+    .search {
+        padding-top: 4%;
+    }
+    .search input{
+        width: 80%;
+        display: flex;
+        justify-self: center;
+        margin-left: 10%;
+        padding: 0.5%;
+        margin-bottom: 3%;
+        position: relative;
+    }
+    .foot-col a{
+        text-decoration: none;
+        color: #ffffff;
+        display: block;
+        font-size: medium;
+        padding: 1%;
+    }
+    .footer .tags{
+        display: flex;
+        margin: 0.5% 10%;
+    }
+     .tags a{
+        text-decoration: none;
+        color: #ffffff;
+        display: flex;
+        font-size: medium;
+        padding: 1% 1%;
+    }
+
+    .footer p{
+        margin-left: 10%;
+        margin-bottom:0% ;
+        color: #ffffff;
+    }
+    .footer #right{
+        margin-top: 3%;
+    }
+    .social{
+
+        position: relative;
+    }
+    .social .col{
+        width: 100%;
+    }
+    .social .col1{
+        width: 10%;
+        margin-left: 12%;
+    
+    }
+
+    .social .col1 img{
+        width: 40%;
+        height: 20%;
+    }
+    .social .col2{
+        width: 35%;
+        position: absolute;
+        right: 2%;
+        top: 15%;
+        display: flex;
+    }
+    .social .col2 a img{
+        width: 10%;
+        padding-left: 5%;
+        margin-top: -2%;
+    }
+    .social .col2 a{
+        border-right: 1px solid white;
+        padding: 0% 3%;
+    }
+
+    .footer hr{
+        margin-top:5%;
+         color: #ffffff; 
+         width: 80%; 
+         height: 1%;
+    }
+
+
+    
+    .BUTTON_SZW {
+        margin-left: 3%;
+        border: 8px;
+        border-radius: 6px;
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 100;
+        padding: 50px;
+        border: solid #FFFFFF 1px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .BUTTON_SZW:hover {
+       background: #73777F;
+    }
+
+/*    @media  screen and (max-width : 1450px) {
+        .navbar .right{
+            margin-left: 5rem;
+        }
+        
+    }*/
+    @media screen and (max-width : 1000px) {
+       
+    .anchor-tag{
+        margin-top: 7%;
+        overflow: auto;
+    }
+
+
+    }
+
+
+    @media screen and (max-width: 800px) {
+    .scroll-container::-webkit-scrollbar {
+         display: none;
+    }
+    .topnav-right {
+        display: none;
+      }
+    .topnav .topnav-centered{
+        visibility: visible;
+    } 
+    .topnav .left{
+        visibility: hidden;
+    }
+        
+    .anchor-tag{
+        margin-top: 13%;
+    }
+
+        /* Define the animation */
+       
+    .heading-section .space::after{
+        max-width: 40%;
+    } 
+    .sixth-main .heading-section .space::after{
+        max-width: 40%;
+    }
+    .first-main{
+        display: block;
+    }
+    .first-main .first-col1{
+        width: 100%;
+        display: block;
+    }
+    .first-main .first-col2{
+        width: 100%;
+    }
+    .first-main .first-col3{
+        width: 100%;
+    }  
+    .second-main{
+        display: block;
+    }
+    .second-main .second-col1{
+        width: 100%;
+        display: block;
+    }
+    .second-main .second-col2{
+        width: 100%;
+        margin-top: 3%;
+    }
+    .second-main .second-col3{
+        width: 100%;
+    }  
+    .third-main{
+        display: block;
+    }
+    .third-col{
+        display: block;
+    }
+    .third-main .third-col1{
+        width: 100%;
+        display: block;
+    }
+    .third-main .third-col2{
+        width: 100%;
+        margin-top: 3%;
+    }
+
+    .forth-col{
+        display: block;
+    }
+    .forth-col .forth-col1{
+        width: 100%;
+    }
+    .forth-col .forth-col2{
+        width: 100%;
+        margin-top: 20%;
+        margin-left: 0%;
+    }
+    .forth-main .forth-text{
+        position: absolute;
+        background-color: #d9d9d9;
+        width: 70%;
+        margin: 0% 7%;
+        padding: 0% 3%;
+        top: 80%;
+        font-size: large;
+        z-index: 999;
+        
+    }
+
+    .fifth-main .fifth-col{
+        display: block;
+    }
+    .fifth-main .fifth-col1{
+        width: 100%;
+    }
+
+    .fifth-main .fifth-col2{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .fifth-main .fifth-col3{
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .sixth-main .six-col{
+        display: block;
+    }
+    .sixth-main .six-col1{
+        width: 100%;
+    }
+    .sixth-main .six-col2{
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 4%;
+    }
+    .footer .foot-col a{
+        display: none;
+    }
+    .footer .foot-col .first{
+        display: block;
+        margin-top: 85%;
+    }
+
+    .social{
+        display: block;
+        width: 100%;
+    }
+
+    .footer .tags{
+        display: block;
+        margin: 0.5% 10%;
+        justify-content: center;   
+    }
+    .footer a{
+        justify-content: center;
+    }
+
+    .social .col{
+        display: block;
+    }
+    .social .col1 img{
+        width: 60%;
+        height: 20%;
+    }
+    .social .col2{
+        width: 70%;
+        display: block;
+       margin-top: -20%;
+        border-radius: 0px solid black ;
+    }
+
+    .social .col2 .tags{
+        margin-left: 3%;
+    }
+
+    .social .col2 .BUTTON_SZW{
+        visibility :hidden;
+    }
+    .social .col2 a{
+        border-right: 0px solid white;
+        padding: 5% 3%;
+        margin-left: -12%;
+    }
+    .social .col1{
+        display: none;
+    }
+
+    .last-footer .foot-col2:last-child{
+        margin-bottom: 15%;
+    }
+
+
+
+
+
+
+    }   
+
+    @media screen and (max-width: 450px) {
+        .heading-section .space::after{
+        max-width: 25%;
+    } 
+    .sixth-main .heading-section .space::after{
+        max-width: 25%;
+    }  
+
+    
+    }   
+
+    .img-width{
+        width: 100%;
+    }
+
+    .sub-img-width{
+        width: 100%;
+        padding-top: 10%;
+    }
+    .line-style{
+        text-align: justify;
+        margin: 0px; 
+    }
+
+    .play-button-style
+    {
+        width:05%;
+        color:red; 
+        vertical-align: top;
+         display:inline-flex;
+        margin-right: 2%;
+    }
+    .featured-imgtext-style{
+        width: 25%; 
+        vertical-align: top;
+    }
+    .forth-img-style{
+        width: 7%;
+    }
+    .last-footer{
+        margin-top: 5%;
+    }
+    .red-text{
+        color:red; 
+        padding: 0px;
+        margin: 0px; 
+    }
+    </style>
+    </head>
+    <body>
+        <div class="header-main">
+            <!-- Top navigation -->
+        <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered">
+            <a href="#"><img class="find" src="images/menu.png"></a>
+        </div>
+    
+        <!-- Left-aligned links (default) -->
+        <div class="left">
+            <a href="#"><img class="logo" src="images/cnn.png" alt="CNN-Logo"></a>
+            <a class="second" href="default.asp">World</a>
+            <a href="contact.asp">Money</a>
+            <a href="default.asp">World</a>
+            <a href="about.asp">About</a> 
+        </div>
+        
+
+    
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+            <a href="contact.asp">International Edition</a>
+            <a href="#"><img class="find" src="images/find.png"></a>
+            <a href="#"><img class="find" src="images/menu.png"></a>
+        </div>
+
+    </div>
+</div>
+
+    
+            <div class="scroll-container">
+                <div class="anchor-tag">
+                  <a href="https://www.google.com"><span class="custom-color">TRENDING</span> Timeline of Russia's war in Ukraine</a>
+                  <a href="https://www.google.com">Historic Oscars night</a>
+                  <a href="https://www.google.com">BBC impartiality storm</a>
+                  <a href="https://www.google.com">Nepal solo trekking</a>
+                  <a href="https://www.google.com">'The Last of Us'</a>
+                </div>
+              </div>
+
+        
+  
+
+        <div class="main-div"><!--To center all content
+        style="width: 100%" to img-width-->
+
+            <div class="first-main"><!--to apply flex-->
+                <div class="first-col1">
+                    <h1>Russian fighter jet forces down US Air Force drone</h1>
+                    <img class="img-width" src="images/img1.PNG" alt="news">
+                    <span class="sub-heading">The Russian plane damaged the
+                        propeller of the American MQ-9 Reaper drone after
+                        intercepting it over international waters in the Black
+                        Sea</span>
+                    <hr class="horizontal">
+                    <a class="first-child"><span class="red-text">Live-Update&nbsp;</span> Drone has
+                        not been recovered, military says</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                </div>
+                <div class="first-col2">
+                    <img class="sub-img-width"
+                        src="images/img2.PNG" alt="news">
+                    <h2 class="line-style">FBI
+                        interrogator says Saddam Hussein knew two things about
+                        him within seconds</h2>
+                    <img class="sub-img-width"
+                        src="images/img3.PNG" alt="news">
+                    <h2 class="line-style">FBI
+                        interrogator says Saddam Hussein knew two things about
+                        him within seconds</h2>
+                    <ul>
+                        <li><a href="https//www.google.com">Australia, UK and US
+                                are joining forces in the Pacific, but will
+                                nuclear subs arrive quick enough to counter
+                                China?</a></li>
+                        <li><a href="https//www.google.com"><Strong>Australia:</Strong>
+                                UK and US are joining forces in the Pacific, but
+                                will nuclear subs arrive quick enough to counter
+                                China?</a></li>
+                    </ul>
+                </div>
+                <div class="first-col3">
+                    <img class="sub-img-width"
+                        src="images/img4.PNG" alt="news">
+                    <h2 class="line-style">FBI
+                        interrogator says Saddam Hussein knew two things about
+                        him within seconds</h2>
+                    <hr class="horizontal">
+                    <a class="first-child" href="#"><span><img class="play-button-style"
+                                src="images/play-button.png"></span><span
+                            class="detail-text">The Russian plane damaged the
+                            propeller of the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</span></a>
+                    <hr class="horizontal">
+                    <a class="detail-text">The Russian plane damaged the
+                        propeller of-the American MQ-9 Reaper drone after
+                        intercepting it over international waters in the Black
+                        Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                </div>
+            </div>
+
+
+            <div class="second-main">
+                <div class="second-col1">
+                    <div class="top-heading">
+                        <h2>News and Buzz</h2>
+                    </div>
+                    <img class="img-width" src="images/img5.PNG" alt="news">
+                    <h3 class="line-style">FBI
+                        interrogator says Saddam Hussein knew two things about
+                        him within seconds</h3>
+                    <hr class="horizontal">
+                    <a class="first-child" href="#"><span><img class="play-button-style"
+                                src="images/play-button.png"></span><span
+                            class="detai">The Russian plane damaged the
+                            propeller of the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</span></a>
+                    <hr class="horizontal">
+                    <a class="detail-text">The Russian plane damaged the
+                        propeller of-the American MQ-9 Reaper drone after
+                        intercepting it over international waters in the Black
+                        Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                    <hr class="horizontal">
+                    <a>The Russian plane damaged the propeller of the American
+                        MQ-9 Reaper drone after intercepting it over
+                        international waters in the Black Sea</a>
+                </div>
+                <div class="second-col2">
+                    <div class="top-heading">
+                        <h2>Featured</h2>
+                    </div>
+                    <div class="img-text">
+                        <img class="img-width" src="images/img8.PNG"
+                            alt="news">
+                        <h3>A blob twice the width of the US is headed for
+                            Florida</h3>
+                    </div>
+                    <div class="featured-imgText">
+                        <!---Changed from here-->
+                        <img class="featured-imgtext-style"
+                            src="images/img1.PNG" alt="news">
+                        <h3>Koh-i-Noor diamond to be recognized as 'a symbol of
+                            conquest' in exhibition</h3>
+                    </div>
+                    <hr class="horizontal">
+                    <div class="featured-imgText">
+                        <img class="featured-imgtext-style"
+                            src="images/img9.PNG" alt="news">
+                        <h3>Koh-i-Noor diamond to be recognized as 'a symbol of
+                            conquest' in exhibition</h3>
+                    </div>
+                    <hr class="horizontal">
+                </div>
+                <div class="second-col3">
+                    <div class="top-heading">
+                        <h2>Spotlight</h2>
+                    </div>
+                    <div class="featured-imgText">
+                        <img class="featured-imgtext-style"
+                            src="images/img10.PNG" alt="news">
+                        <p>Koh-i-Noor diamond to be recognized as 'a symbol of
+                            conquest' in exhibition</p>
+                    </div>
+                    <hr class="horizontal">
+                    <div class="featured-imgText">
+                        <img class="featured-imgtext-style"
+                            src="images/img11.PNG" alt="news">
+                        <p>Koh-i-Noor diamond to be recognized as 'a symbol of
+                            conquest' in exhibition</p>
+                    </div>
+                    <hr class="horizontal">
+                    <div class="featured-imgText">
+                        <img class="featured-imgtext-style"
+                            src="images/img12.PNG" alt="news">
+                        <p>Koh-i-Noor diamond to be recognized as 'a symbol of
+                            conquest' in exhibition</p>
+                    </div>
+                </div>
+            </div><!--End of Second main section-->
+
+            <div class="third-main">
+                <div class="heading-section">
+                    <div>
+                        <h2>Featured Sections</h2>
+                        <span class="space">
+                            &nbsp;
+                        </span>
+                    </div>
+
+                </div>
+                <div class="third-col">
+                    <div class="third-col1">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img13.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                    <div class="third-col2">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img14.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                </div>
+                <!--Below Portion of it sameee..-->
+                <div class="third-col">
+                    <div class="third-col1">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img15.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                    <div class="third-col2">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img16.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                    <div class="third-col2">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img17.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                </div>
+
+                <!--Another on Below Portion of it sameee..-->
+                <div class="third-col">
+                    <div class="third-col1">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img5.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                    <div class="third-col2">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img5.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                    <div class="third-col2">
+                        <div class="top-heading">
+                            <h2>Spotlight</h2>
+                        </div>
+                        <img class="img-width" src="images/img5.PNG"
+                            alt="news">
+                        <h3 class="line-style">FBI
+                            interrogator says Saddam Hussein knew two things
+                            about him within seconds</h3>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a class="detail-text">The Russian plane damaged the
+                            propeller of-the American MQ-9 Reaper drone after
+                            intercepting it over international waters in the
+                            Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                        <hr class="horizontal">
+                        <a>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forth-main">
+                <div class="heading-section">
+                    <div>
+                        <h2>Watch it</h2>
+                        <span class="space">
+                            &nbsp;
+                        </span>
+                    </div>
+                </div>
+                <div class="forth-col">
+                    <div class="forth-col1">
+                        <div class="forth-img">
+                            <img class="img-width" src="images/img14.PNG"
+                                alt="news">
+                            <div class="forth-text">
+                                <img class="forth-img-style"
+                                    src="images/play-button.png" alt="play">
+                                <p>The Russian plane damaged the propeller of
+                                    the American</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forth-col2">
+                        <div class="forth-img">
+                            <img class="img-width" src="images/img14.PNG"
+                                alt="news">
+                            <div class="forth-text">
+                                <span>
+                                    <img class="forth-img-style"
+                                        src="images/play-button.png" alt="play">
+                                    <p>The Russian plane damaged the propeller
+                                        of
+                                        the American</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--End of 4th main-->
+
+            <div class="fifth-main">
+                <div class="heading-section">
+                    <div>
+                        <h2>Watch it</h2>
+                        <span class="space">
+                            &nbsp;
+                        </span>
+                    </div>
+                </div>
+                <div class="fifth-col">
+                    <div class="fifth-col1">
+                        <img class="img-width" src="images/img7.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</h3>
+                    </div>
+                    <div class="fifth-col2">
+                        <img class="img-width" src="images/img2.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</h3>
+                    </div>
+                    <div class="fifth-col3">
+                        <img class="img-width" src="images/img8.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</h3>
+                    </div>
+                </div>
+                <div class="fifth-col">
+                    <div class="fifth-col1">
+                        <img class="img-width" src="images/img8.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</h3>
+                    </div>
+                    <div class="fifth-col2">
+                        <img class="img-width" src="images/img2.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</h3>
+                    </div>
+                    <div class="fifth-col3">
+                        <img class="img-width" src="images/img7.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of the
+                            American MQ-9 Reaper drone after intercepting it
+                            over international waters in the Black Sea</h3>
+                    </div>
+                </div>
+            </div><!--End of 5th Main-->
+        </div>
+
+
+            <div class="sixth-main">
+                <div class="heading-section">
+                    <div>
+                        <h2>In case You Miss</h2>
+                        <span class="space">
+                            &nbsp;
+                        </span>
+                    </div>
+                </div>
+                <div class="six-col">
+                    <div class="six-col1">
+                        <div class="img-text">
+                            <img class="img-width" src="images/img6.jpg"
+                                alt="news">
+                            <h3>After months of speculation, Pharrell Williams
+                                takes job at Louis Vuitton</h3>
+                        </div>
+                    </div>
+                    <div class="six-col2">
+                        <img class="img-width" src="images/img12.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of
+                            the American</h3>
+                        <img class="img-width" src="images/img14.PNG"
+                            alt="news">
+                        <h3>The Russian plane damaged the propeller of
+                            the American</h3>
+                    </div>
+                </div>
+            </div><!--End of sixth Main-->
+
+            <div class="footer">
+                <div class="search">
+                    <input placeholder="search" type="text">
+                </div>
+                <div class="foot-col">
+                    <div class="foot-col1">
+                        <a  href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                        <a href="#">Iran</a>
+                        <a href="#">Pakistan</a>
+                        <a href="#">Canda</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a   href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                        <a href="#">Iran</a>
+                        <a href="#">Pakistan</a>
+                        <a href="#">Canda</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a class="first" href="#"><strong>World</strong></a>
+                        <br>
+                        <a class="first" href="#">Africa</a>
+                        <a class="first" href="#">Americas</a>
+                        <a class="first" href="#">Asia</a>
+                        <a class="first" href="#">Australia</a>
+                        <a class="first" href="#">Africa</a>
+                        <a class="first" href="#">China</a>
+                        <a class="first" href="#">Europe</a>
+
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a  href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                        <a href="#">Iran</a>
+                        <a href="#">Pakistan</a>
+                        <a href="#">Canda</a>
+                    </div>
+                </div>
+                <div class="foot-col foot-col-2 last-footer">
+                    <div class="foot-col1">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                        <a href="#">Iran</a>
+                        <a href="#">Pakistan</a>
+                        <a href="#">Canda</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                        <a href="#">Iran</a>
+                        <a href="#">Pakistan</a>
+                        <a href="#">Canda</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                    </div>
+                    <div class="foot-col2">
+                        <a href="#"><strong>World</strong></a>
+                        <br>
+                        <a href="#">Africa</a>
+                        <a href="#">Americas</a>
+                        <a href="#">Asia</a>
+                        <a href="#">Australia</a>
+                        <a href="#">Africa</a>
+                        <a href="#">China</a>
+                        <a href="#">Europe</a>
+                        <a href="#">Srilanka</a>
+                        <a href="#">India</a>
+                        <a href="#">Middle East</a>
+                        <a href="#">United Kingdom</a>
+                        <a href="#">Iran</a>
+                        <a href="#">Pakistan</a>
+                        <a href="#">Canda</a>
+                    </div>
+                </div>
+                <br>
+                <div class="social">
+                    <div class="col">
+                        <div class="col1">
+                            <img src="images/cnn.png" alt="CNN-Logo">
+                        </div>
+                        <div class="col2 tags"> 
+                                <a href="#">Audio</a>
+                                <a href="#">Follow CNN
+                                    <img src="images/facebook.png" alt="facebookIcon">
+                                    <img src="images/twitter.png" alt="twitterIcon">
+                                    <img src="images/instagram.png" alt="instaIcon">
+                                </a>
+                                <a href="#" class="BUTTON_SZW"> Log In</a>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="tags">
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Settings</a>
+                    <a href="#">Ad Choices</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Modern Slavery Act Statement</a>
+                    <a href="#">Advertise with us</a>
+                    <a href="#">Newsletters</a>
+                    <a href="#">Transcripts</a>
+                    <a href="#">CNN Store</a>
+                </div>
+                <div class="tags">
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Settings</a>
+                    <a href="#">Ad Choices</a>
+                    <a href="#">About Us</a>
+                </div>
+                <p id="right">© 2023 Cable News Network.A Warner Bros. Discovery Company.All Rights Reserved.</p>
+                <p>CNN Sans ™ & © 2016 Cable News Network.</p>
+                <br>
+                <br>    
+
+
+            </div>
+            </div>
+
+
+
+
+    </body>
+</html>
